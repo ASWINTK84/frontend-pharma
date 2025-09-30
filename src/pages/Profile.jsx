@@ -110,8 +110,10 @@ const generateShareLink = async () => {
       </div>;
 
   return (
+
+
    <div className=" min-h-screen bg-gray-100"> 
-    <div className="mx-auto bg-white shadow-2xl rounded-xl p-8 lg:p-12"> 
+    <div className="mx-auto bg-white shadow-2xl rounded-xl  lg:p-12"> 
          <div className="flex justify-between items-center mb-6 border-b pb-2">
     <h2 className="text-3xl font-extrabold text-gray-900">
       My Professional Profile
