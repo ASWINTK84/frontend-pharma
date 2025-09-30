@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+
 
 export default function Profile() {
   const [user, setUser] = useState(null);
