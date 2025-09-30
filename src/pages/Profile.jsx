@@ -104,7 +104,7 @@ const generateShareLink = async () => {
   if (!user) return <div className="p-6">Loading...</div>;
 
   return (
-   <div className="p-10 min-h-screen bg-gray-100"> {/* Use full width and a light background for the page */}
+   <div className=" min-h-screen bg-gray-100"> {/* Use full width and a light background for the page */}
     <div className="mx-auto bg-white shadow-2xl rounded-xl p-8 lg:p-12"> {/* Enhanced shadow and padding */}
         <h2 className="text-4xl font-extrabold  border-b-4 border-indigo-500 pb-4 mb-10">My Professional Profile  </h2>
    
