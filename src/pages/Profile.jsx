@@ -276,7 +276,7 @@ const generateShareLink = async () => {
                 </div>
             </div>
         ) : (
-            <div className="space-y-10 p-8 bg-white rounded-xl shadow-2xl border border-indigo-100"> 
+            <div className="space-y-10  bg-white rounded-xl shadow-2xl border border-indigo-100"> 
     
     <p className="text-3xl font-extrabold border-b-4 border-indigo-400 pb-3">Edit Profile Details </p>
 
