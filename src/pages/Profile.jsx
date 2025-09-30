@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -106,7 +107,21 @@ const generateShareLink = async () => {
   return (
    <div className=" min-h-screen bg-gray-100"> {/* Use full width and a light background for the page */}
     <div className="mx-auto bg-white shadow-2xl rounded-xl p-8 lg:p-12"> {/* Enhanced shadow and padding */}
-        <h2 className="text-4xl font-extrabold  border-b-4 border-indigo-500 pb-4 mb-10">My Professional Profile  </h2>
+         <div className="flex justify-between items-center mb-6 border-b pb-2">
+    <h2 className="text-3xl font-extrabold text-gray-900">
+      My Professional Profile
+    </h2>
+
+    <button 
+      onClick={() => navigate('/')} 
+      className="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 border border-blue-400 py-2 px-4 rounded-full shadow-md transition duration-200 
+                 hover:bg-blue-50 hover:border-blue-500 hover:shadow-lg transform hover:scale-[1.03]"
+      aria-label="Go back to admin page"
+    >
+      <FaArrowLeft className="w-4 h-4" />
+      <span>Back to Login</span>
+    </button>
+  </div>
    
 
         {!editing ? (
