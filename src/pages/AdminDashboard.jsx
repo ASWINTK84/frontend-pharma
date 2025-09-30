@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null);
   const [users, setUsers] = useState([]);
   const [msg, setMsg] = useState('');
+   const navigate = useNavigate();
 
   useEffect(()=>{ load(); },[]);
   async function load() {
@@ -41,6 +44,16 @@ export default function AdminDashboard() {
   <h2 className="text-3xl font-extrabold text-gray-900 mb-6 border-b pb-2">
     Admin Dashboard 
   </h2>
+
+                  <button 
+                      onClick={() => navigate('/')} 
+                      className="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 border border-blue-400 py-2 px-4 rounded-full shadow-md transition duration-200 
+                              hover:bg-blue-50 hover:border-blue-500 hover:shadow-lg transform hover:scale-[1.03]"
+                      aria-label="Go back to admin page"
+                  >
+                      <FaArrowLeft className="w-4 h-4" />
+                      <span>Back to Login</span>
+                  </button>
 
   {/* --- */}
 
