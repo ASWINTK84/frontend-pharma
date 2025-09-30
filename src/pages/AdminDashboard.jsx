@@ -41,25 +41,21 @@ export default function AdminDashboard() {
 
   return (
     <div className="p-8 bg-gray-50 min-h-screen">
+ <div className="flex justify-between items-center mb-6 border-b pb-2">
+    <h2 className="text-3xl font-extrabold text-gray-900">
+      Admin Dashboard
+    </h2>
 
-      <div>
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-6 border-b pb-2">
-          Admin Dashboard 
-        </h2>
-
-        <button 
-                      onClick={() => navigate('/')} 
-                      className="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 border border-blue-400 py-2 px-4 rounded-full shadow-md transition duration-200 
-                              hover:bg-blue-50 hover:border-blue-500 hover:shadow-lg transform hover:scale-[1.03]"
-                      aria-label="Go back to admin page"
-                  >
-                      <FaArrowLeft className="w-4 h-4" />
-                      <span>Back to Login</span>
-                  </button>
-      </div>
-  
-
-                  
+    <button 
+      onClick={() => navigate('/')} 
+      className="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 border border-blue-400 py-2 px-4 rounded-full shadow-md transition duration-200 
+                 hover:bg-blue-50 hover:border-blue-500 hover:shadow-lg transform hover:scale-[1.03]"
+      aria-label="Go back to admin page"
+    >
+      <FaArrowLeft className="w-4 h-4" />
+      <span>Back to Login</span>
+    </button>
+  </div>
 
   {/* --- */}
 
