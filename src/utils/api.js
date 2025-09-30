@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://backend-pharma-1quk.onrender.com',
+  baseURL: 'https://backend-pharma-1quk.onrender.com/api',
 });
 
 // Interceptor to add correct token
