@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../utils/api"; // axios instance
+import API from "../utils/api";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ export default function AdminLogin() {
     try {
       const res = await API.post("/admin/login", { email, password });
       localStorage.setItem("adminToken", res.data.token);
-      navigate("/admin"); // redirect after login
+      navigate("/admin"); 
     } catch (err) {
       setMsg(err.response?.data?.message || "Login failed");
     }
@@ -32,14 +32,14 @@ export default function AdminLogin() {
             <p className="text-sm text-gray-500 mt-1">Access your management dashboard.</p>
         </div>
 
-        {/* Dynamic Message Area */}
+    
         {msg && (
             <p className="text-center text-sm font-medium p-3 mb-4 rounded-lg bg-red-100 text-red-700 border border-red-300">
                 {msg}
             </p>
         )}
 
-        {/* Email Input */}
+        
         <div className="mb-5">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
@@ -56,7 +56,7 @@ export default function AdminLogin() {
             />
         </div>
 
-        {/* Password Input */}
+
         <div className="mb-6">
             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
@@ -71,7 +71,7 @@ export default function AdminLogin() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
             />
-            {/* Optional: Forgot Password Link */}
+        
             <div className="text-right mt-1">
                 <a href="#" className="text-xs font-medium text-blue-600 hover:text-blue-700 hover:underline">
                     Forgot Password?
@@ -79,7 +79,7 @@ export default function AdminLogin() {
             </div>
         </div>
 
-        {/* Submit Button */}
+        
         <button
             type="submit"
             className="bg-blue-600 text-white font-semibold tracking-wide uppercase py-3 rounded-lg w-full shadow-lg transition duration-200 

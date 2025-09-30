@@ -18,14 +18,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public routes */}
+       
         <Route path="/register" element={<Register />} />
         <Route path="/verify/:token" element={<Verify />} />
         <Route path="/" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/shared/:token" element={<SharedView />} />
 
-        {/* Admin routes */}
+       
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route
           path="/admin"

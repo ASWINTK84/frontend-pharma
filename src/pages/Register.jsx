@@ -35,7 +35,7 @@ export default function Register() {
             Join Our Community 
         </h2>
         
-        {/* Message Display Area */}
+        
         {msg && (
             <div className="mb-6 p-4 text-center text-md font-semibold text-red-700 bg-red-50 border border-red-300 rounded-xl">
                 {msg}
@@ -44,7 +44,7 @@ export default function Register() {
         
         <form onSubmit={handleSubmit} className="space-y-6">
             
-            {/* Basic Text Inputs - Sleek, Darker Borders */}
+            
             <input 
                 required 
                 placeholder="Full Name" 
@@ -75,7 +75,7 @@ export default function Register() {
                 className="w-full p-4 border-2 border-gray-300 bg-gray-50 rounded-xl focus:border-indigo-600 focus:ring-4 focus:ring-indigo-200 focus:outline-none transition duration-200 placeholder-gray-500 shadow-sm text-gray-800"
             />
 
-            {/* File Uploads - Highlighting file type */}
+           
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                 <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Profile Photo (JPG/PNG)</label>
@@ -97,7 +97,7 @@ export default function Register() {
                 </div>
             </div>
 
-            {/* Submit Button - Gradient and Hover Effect */}
+        
             <button 
                 type="submit" 
                 className="w-full mt-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-extrabold text-lg rounded-xl shadow-xl hover:shadow-2xl hover:from-indigo-700 hover:to-purple-700 transition duration-300 transform hover:scale-[1.01]"

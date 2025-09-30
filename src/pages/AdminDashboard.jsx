@@ -57,28 +57,28 @@ export default function AdminDashboard() {
     </button>
   </div>
 
-  {/* --- */}
+  
 
-  {/* Statistics Cards */}
+ 
   {stats && (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {/* Total Users Card */}
+        
         <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
           <p className="text-sm font-medium text-gray-500">Total Users</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">{stats.total}</p>
         </div>
-        {/* Active Users Card */}
+        
         <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
           <p className="text-sm font-medium text-gray-500">Active</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">{stats.active}</p>
         </div>
-        {/* Pending Users Card */}
+        
         <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
           <p className="text-sm font-medium text-gray-500">Pending</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">{stats.pending}</p>
         </div>
-        {/* Blocked Users Card */}
+        
         <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
           <p className="text-sm font-medium text-gray-500">Blocked</p>
           <p className="text-3xl font-bold text-gray-900 mt-1">{stats.blocked}</p>
@@ -87,9 +87,11 @@ export default function AdminDashboard() {
     </>
   )}
 
-  {/* --- */}
+ 
 
-  {/* Users Table Section */}
+  
+
+
   <div className="bg-white shadow-xl rounded-xl overflow-hidden">
     <h3 className="text-2xl font-semibold p-6 text-gray-800 border-b">Users Management</h3>
     <div className="overflow-x-auto">
@@ -126,7 +128,7 @@ export default function AdminDashboard() {
                 {u.email}
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                {/* Status Badge */}
+               
                 <span
                   className={`px-3 inline-flex text-xs leading-5 font-semibold rounded-full 
                     ${u.status === 'active' ? 'bg-green-100 text-green-800' :
@@ -140,7 +142,7 @@ export default function AdminDashboard() {
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                 <div className="flex justify-center space-x-3">
-                  {/* Block/Unblock Button */}
+                
                   {u.status !== 'blocked' ? (
                     <button
                       onClick={() => blockUser(u._id)}
@@ -159,7 +161,7 @@ export default function AdminDashboard() {
                     </button>
                   )}
 
-                  {/* Delete Button */}
+                
                   <button
                     onClick={() => deleteUser(u._id)}
                     className="text-gray-600 hover:text-gray-900 font-medium p-2 rounded-lg hover:bg-gray-50 transition duration-150"
@@ -168,7 +170,7 @@ export default function AdminDashboard() {
                     Delete
                   </button>
                   
-                  {/* View/Edit Button */}
+                  
                   <a
                     href={`/admin/users/${u._id}`}
                     className="text-indigo-600 hover:text-indigo-900 font-medium p-2 rounded-lg hover:bg-indigo-50 transition duration-150"

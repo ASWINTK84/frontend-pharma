@@ -25,20 +25,20 @@ export default function SharedView() {
   return (
    <div className="min-h-screen bg-gray-50 p-8 sm:p-12">
 
-    {/* Centered Profile Card - Increased max-width for more content space */}
+   
     <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl space-y-8 border-t-8 border-indigo-600 p-8">
         
-        {/* Profile Header and Basic Info */}
+       
         <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-8 pb-8 border-b border-gray-200">
             
-            {/* Profile Image */}
+        
             <img 
                 src={profile.photo} 
                 alt={`${profile.fullName}'s profile`}
                 className="w-32 h-32 object-cover rounded-full ring-4 ring-indigo-300 shadow-xl"
             />
             
-            {/* Name and Membership */}
+         
             <div className="text-center sm:text-left pt-2">
                 <h2 className="text-4xl font-extrabold text-gray-900 leading-tight">
                     {profile.fullName}
@@ -53,15 +53,15 @@ export default function SharedView() {
             </div>
         </div>
         
-        {/* --- */}
+       
 
-        {/* Main Content Area: Education and Experience in a Two-Column Layout */}
+      
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             
-            {/* Left Column (Education, Skills, Languages) */}
+          
             <div className="lg:col-span-1 space-y-8">
                 
-                {/* Education Section */}
+               
                 <div className="space-y-4">
                     <h3 className="text-2xl font-bold text-indigo-700 border-l-4 border-indigo-500 pl-3">Education 🎓</h3>
                     <div className="space-y-4">
@@ -76,7 +76,7 @@ export default function SharedView() {
                     </div>
                 </div>
 
-                {/* Skills */}
+              
                 <div className="space-y-4 pt-4 border-t border-gray-100">
                     <h3 className="text-xl font-bold text-gray-800 mb-2">Skills 💡</h3>
                     <div className="flex flex-wrap gap-2">
@@ -88,7 +88,7 @@ export default function SharedView() {
                     </div>
                 </div>
                 
-                {/* Languages */}
+              
                 <div className="space-y-4">
                     <h3 className="text-xl font-bold text-gray-800 mb-2">Languages 🗣️</h3>
                     <div className="flex flex-wrap gap-2">
@@ -102,10 +102,10 @@ export default function SharedView() {
 
             </div>
 
-            {/* Right Column (Experience and Resume) */}
+           
             <div className="lg:col-span-2 space-y-8">
 
-                {/* Experience Section */}
+             
                 <div className="space-y-6">
                     <h3 className="text-2xl font-bold text-indigo-700 border-l-4 border-indigo-500 pl-3">Experience 💼</h3>
                     <div className="space-y-6">
@@ -122,7 +122,7 @@ export default function SharedView() {
                     </div>
                 </div>
                 
-                {/* Resume Download (Integrated into the right column) */}
+                
                 <div className="pt-6 border-t border-gray-200">
                     <h3 className="text-2xl font-bold text-indigo-700 border-l-4 border-indigo-500 pl-3 mb-4">Resume 📄</h3>
                     {profile.resume ? (

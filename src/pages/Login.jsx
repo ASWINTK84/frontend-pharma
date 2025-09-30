@@ -32,7 +32,7 @@ export default function Login() {
                 <p className="text-sm text-gray-500 mt-1">Sign in to your account.</p>
             </div>
 
-            {/* Dynamic Message Area */}
+           
             {msg && (
                 <div className="text-center text-sm font-medium p-3 mb-4 rounded-lg bg-red-100 text-red-700 border border-red-300">
                     {msg}
@@ -40,7 +40,7 @@ export default function Login() {
             )}
 
             <div className="space-y-5">
-                {/* Email Input */}
+                
                 <div>
                     <label htmlFor="user-email" className="block text-sm font-medium text-gray-700 mb-1">
                         Email Address
@@ -51,13 +51,13 @@ export default function Login() {
                         placeholder="yourname@example.com" 
                         value={form.email} 
                         onChange={e => setForm({...form, email:e.target.value})} 
-                        // --- Explicit Tailwind Classes for 'input' ---
+                       
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 
                                    focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-150 text-base" 
                     />
                 </div>
 
-                {/* Password Input */}
+                
                 <div>
                     <label htmlFor="user-password" className="block text-sm font-medium text-gray-700 mb-1">
                         Password
@@ -69,16 +69,16 @@ export default function Login() {
                         placeholder="••••••••" 
                         value={form.password} 
                         onChange={e => setForm({...form, password:e.target.value})} 
-                        // --- Explicit Tailwind Classes for 'input' ---
+                        
                         className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm placeholder-gray-400 
                                    focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-150 text-base" 
                     />
                 </div>
 
-                {/* Login Button */}
+                
                 <button 
                     type="submit"
-                    // --- Explicit Tailwind Classes for 'btn' ---
+                  
                     className="w-full bg-blue-600 text-white font-bold tracking-wide py-3 mt-3 rounded-xl shadow-lg transition duration-200 
                                hover:bg-blue-700 transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-lg"
                 >
@@ -86,7 +86,7 @@ export default function Login() {
                 </button>
             </div>
             
-            {/* Optional: Footer Links */}
+           
             <div className="mt-6 text-center text-sm">
                 
                 <p className="mt-2 text-gray-600">

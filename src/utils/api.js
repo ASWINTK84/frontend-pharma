@@ -4,9 +4,9 @@ const API = axios.create({
   baseURL: 'https://backend-pharma-1quk.onrender.com/api',
 });
 
-// Interceptor to add correct token
+
 API.interceptors.request.use(config => {
-  // check route
+ 
   if (config.url.startsWith('/admin')) {
     const adminToken = localStorage.getItem('adminToken');
     if (adminToken) {

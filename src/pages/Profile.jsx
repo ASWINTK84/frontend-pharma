@@ -13,7 +13,7 @@ export default function Profile() {
 
   const navigate = useNavigate();
 
-  // Fetch user profile
+  
   useEffect(() => {
     fetchProfile();
   }, []);
@@ -23,7 +23,7 @@ export default function Profile() {
       const res = await API.get('/profile');
       const data = res.data;
 
-      // Convert comma-separated strings to arrays if needed
+
       if (data.skills && typeof data.skills === 'string') data.skills = data.skills.split(',').map(s => s.trim());
       if (data.languages && typeof data.languages === 'string') data.languages = data.languages.split(',').map(l => l.trim());
 
@@ -37,7 +37,7 @@ export default function Profile() {
   console.log(user);
   
 
-  // Add new education/experience rows
+
   const addEducation = () => {
     setForm(prev => ({
       ...prev,
@@ -51,7 +51,7 @@ export default function Profile() {
     }));
   };
 
-  // Delete education/experience row
+ 
   const deleteEducation = index => {
     setForm(prev => {
       const arr = [...(prev.education || [])];
@@ -67,7 +67,7 @@ export default function Profile() {
     });
   };
 
-  // Save form to backend
+
   const save = async () => {
     try {
       const data = new FormData();
@@ -87,7 +87,7 @@ export default function Profile() {
     }
   };
 
-  // Generate shareable link
+
 const generateShareLink = async () => {
   if (!user) return;
   try {
@@ -105,8 +105,8 @@ const generateShareLink = async () => {
   if (!user) return <div className="p-6">Loading...</div>;
 
   return (
-   <div className=" min-h-screen bg-gray-100"> {/* Use full width and a light background for the page */}
-    <div className="mx-auto bg-white shadow-2xl rounded-xl p-8 lg:p-12"> {/* Enhanced shadow and padding */}
+   <div className=" min-h-screen bg-gray-100"> 
+    <div className="mx-auto bg-white shadow-2xl rounded-xl p-8 lg:p-12"> 
          <div className="flex justify-between items-center mb-6 border-b pb-2">
     <h2 className="text-3xl font-extrabold text-gray-900">
       My Professional Profile
@@ -126,28 +126,27 @@ const generateShareLink = async () => {
 
         {!editing ? (
             <div className="space-y-10">
-                {/* Profile Header (Designed for two columns on wide screens) */}
-                <div className="lg:flex lg:space-x-12 p-8 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300"> {/* Changed to white background with strong shadow and transition */}
-    
-                    {/* Profile Photo - Elevated */}
+          
+                <div className="lg:flex lg:space-x-12 p-8 bg-white border border-gray-200 rounded-xl shadow-xl hover:shadow-2xl transition duration-300"> 
+                  
                     <div className="flex-shrink-0 mb-6 lg:mb-0 relative">
                         <img
                             src={user.profilePhoto?.url || 'https://via.placeholder.com/150'}
                             alt="profile photo"
-                            // Slightly increased size for better presence
+                           
                             className="w-48 h-48 object-cover rounded-full   shadow-2xl mx-auto lg:mx-0"
                         />
                     </div>
                     
-                    {/* Profile Details and Metadata */}
-                    <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8 lg:border-l lg:pl-8 border-gray-100"> {/* Added a vertical divider on desktop */}
+               
+                    <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-8 lg:border-l lg:pl-8 border-gray-100"> 
                         
-                        {/* Column 1 - Name & Contact (Bolder Text) */}
+                      
                         <div className="md:col-span-2">
                             <p className="text-3xl font-extrabold text-gray-900">{user.fullName}</p>
                             <p className="text-xl text-indigo-700 font-medium mb-4">{user.email}</p>
                             
-                            <div className="grid grid-cols-2 gap-y-2 text-sm"> {/* Used a two-column grid for details */}
+                            <div className="grid grid-cols-2 gap-y-2 text-sm"> 
                                 <p className="text-gray-600"><strong>Membership ID:</strong></p>
                                 <p className="font-semibold text-gray-800">{user.membershipId}</p>
 
@@ -166,12 +165,12 @@ const generateShareLink = async () => {
                             </p>
                         </div>
                         
-                        {/* Column 2 - Skills & Languages (Badge Focus) */}
+                       
                         <div className="pt-4 md:pt-0">
                             <p className="text-lg font-bold text-gray-800 mb-3 border-b border-gray-300 pb-1">Skills</p>
                             <span className="flex flex-wrap gap-2">
                                 {(user.skills || []).length ? user.skills.map((skill, i) => (
-                                    // Pill-shaped, slightly larger, bolder badge with darker colors
+                                   
                                     <span key={i} className="bg-indigo-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md hover:bg-indigo-700 transition">{skill}</span>
                                 )) : <span className="text-gray-400 italic text-sm">No skills listed</span>}
                             </span>
@@ -179,7 +178,7 @@ const generateShareLink = async () => {
                             <p className="text-lg font-bold text-gray-800 mt-6 mb-3 border-b border-gray-300 pb-1">Languages</p>
                             <span className="flex flex-wrap gap-2">
                                 {(user.languages || []).length ? user.languages.map((lang, i) => (
-                                    // Pill-shaped, slightly larger, bolder badge with complementary colors
+                                    
                                     <span key={i} className="bg-pink-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md hover:bg-pink-700 transition">{lang}</span>
                                 )) : <span className="text-gray-400 italic text-sm">No languages listed</span>}
                             </span>
@@ -187,9 +186,9 @@ const generateShareLink = async () => {
                     </div>
                 </div>
 
-                {/* Education & Experience in a wide, flexible layout */}
+          
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                    {/* Education Section */}
+               
                     <div>
                         <h3 className="text-2xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Education 🎓</h3>
                         {(user.education || []).length ? (
@@ -205,7 +204,7 @@ const generateShareLink = async () => {
                         ) : <div className="text-gray-500 italic p-4 bg-gray-50 rounded-lg">No education data entered.</div>}
                     </div>
 
-                    {/* Experience Section */}
+               
                     <div>
                         <h3 className="text-2xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Experience 💼</h3>
                         {(user.experience || []).length ? (
@@ -224,12 +223,12 @@ const generateShareLink = async () => {
                     </div>
                 </div>
                 
-                {/* Resume Section */}
+             
                 <div>
                     <h3 className="text-2xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Resume 📄</h3>
                     {user.resume?.url ? (
                         <div className="space-y-4 p-6 bg-gray-50 rounded-lg border border-gray-200">
-                            {/* Download Button */}
+                        
                             <a
                                 href={user.resume.url}
                                 download={user.resume.filename || 'resume.pdf'}
@@ -241,7 +240,7 @@ const generateShareLink = async () => {
                                 <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                             </a>
                             
-                            {/* Display PDF in profile */}
+                            
                             <iframe
                                 src={`https://docs.google.com/gview?url=${user.resume.url}&embedded=true`}
                                 title="Resume Viewer"
@@ -255,7 +254,7 @@ const generateShareLink = async () => {
                 </div>
 
 
-                {/* Action Buttons */}
+              
                 <div className="space-x-6 pt-6 border-t border-gray-200">
                     <button
                         onClick={generateShareLink}
@@ -272,14 +271,14 @@ const generateShareLink = async () => {
                 </div>
             </div>
         ) : (
-            <div className="space-y-10 p-8 bg-white rounded-xl shadow-2xl border border-indigo-100"> {/* Changed to white background and stronger shadow for prominence */}
+            <div className="space-y-10 p-8 bg-white rounded-xl shadow-2xl border border-indigo-100"> 
     
     <p className="text-3xl font-extrabold border-b-4 border-indigo-400 pb-3">Edit Profile Details </p>
 
-    {/* Basic Info Inputs - Enhanced Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-6"> {/* Increased grid to 4 columns for better balance */}
+   
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-6"> 
         
-        {/* Full Name */}
+        
         <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
             <input className="border border-gray-300 p-3 w-full rounded-lg focus:ring-indigo-600 focus:border-indigo-600 transition duration-150 shadow-sm" 
@@ -288,7 +287,7 @@ const generateShareLink = async () => {
                    placeholder="Enter your full name" />
         </div>
         
-        {/* D.O.B */}
+        
         <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Date of Birth</label>
             <input className="border border-gray-300 p-3 w-full rounded-lg focus:ring-indigo-600 focus:border-indigo-600 text-gray-700 transition duration-150 shadow-sm" 
@@ -297,7 +296,7 @@ const generateShareLink = async () => {
                    onChange={e => setForm({ ...form, dob: e.target.value })} />
         </div>
         
-        {/* Gender Toggle (Segmented Control) */}
+       
         <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Gender</label>
             <div className="flex w-full bg-gray-200 rounded-lg p-0.5 shadow-inner">
@@ -316,7 +315,7 @@ const generateShareLink = async () => {
             </div>
         </div>
 
-        {/* Phone */}
+       
         <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
             <input className="border border-gray-300 p-3 w-full rounded-lg focus:ring-indigo-600 focus:border-indigo-600 transition duration-150 shadow-sm" 
@@ -325,7 +324,7 @@ const generateShareLink = async () => {
                    placeholder="Phone" />
         </div>
 
-        {/* Address */}
+      
         <div className="md:col-span-3">
             <label className="block text-sm font-medium text-gray-700 mb-1">Address</label>
             <textarea className="border border-gray-300 p-3 w-full rounded-lg focus:ring-indigo-600 focus:border-indigo-600 transition duration-150 shadow-sm" 
@@ -336,7 +335,7 @@ const generateShareLink = async () => {
         </div>
     </div>
 
-    {/* Skills/Languages */}
+    
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200">
         <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Skills (comma separated)</label>
@@ -354,7 +353,7 @@ const generateShareLink = async () => {
         </div>
     </div>
 
-    {/* Education Editing */}
+  
     <div className="space-y-4 p-6 border border-indigo-300 rounded-lg bg-indigo-50 shadow-lg">
         <h3 className="text-xl font-bold text-indigo-800 flex items-center">
             Education Entries <span className="ml-2 text-base text-gray-500 font-normal">(Most Recent First)</span>
@@ -377,7 +376,7 @@ const generateShareLink = async () => {
         </button>
     </div>
 
-    {/* Experience Editing */}
+
     <div className="space-y-4 p-6 border border-indigo-300 rounded-lg bg-indigo-50 shadow-lg">
         <h3 className="text-xl font-bold text-indigo-800 flex items-center">
             Experience Entries <span className="ml-2 text-base text-gray-500 font-normal">(Most Recent First)</span>
@@ -401,7 +400,7 @@ const generateShareLink = async () => {
         </button>
     </div>
 
-    {/* File uploads */}
+
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-gray-300">
         <div>
             <label className="block text-lg font-bold text-gray-800 mb-3">Profile Photo 📸</label>
@@ -410,7 +409,7 @@ const generateShareLink = async () => {
                 name="profilePhoto"
                 accept="image/*"
                 onChange={e => setProfilePhoto(e.target.files[0])}
-                // Updated file input style for better look
+             
                 className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border file:border-indigo-400 file:text-sm file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 cursor-pointer w-full"
             />
         </div>
@@ -421,13 +420,13 @@ const generateShareLink = async () => {
                 name="resume"
                 accept=".pdf,.doc,.docx"
                 onChange={e => setResume(e.target.files[0])}
-                // Updated file input style for better look
+         
                 className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border file:border-indigo-400 file:text-sm file:font-semibold file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200 cursor-pointer w-full"
             />
         </div>
     </div>
 
-    {/* Save/Cancel Buttons - Prominent and Separated */}
+  
     <div className="space-x-4 pt-8 border-t border-gray-300 flex justify-end">
         <button onClick={() => setEditing(false)} className="px-10 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-300 transition duration-300">
             Cancel

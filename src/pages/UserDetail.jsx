@@ -37,7 +37,7 @@ export default function UserDetail() {
     }
   }
 
-  // Add & remove education
+
   const addEducation = () => {
     setForm(prev => ({
       ...prev,
@@ -52,7 +52,7 @@ export default function UserDetail() {
     });
   };
 
-  // Add & remove experience
+
   const addExperience = () => {
     setForm(prev => ({
       ...prev,
@@ -101,16 +101,16 @@ export default function UserDetail() {
    <div className=" max-w-full mx-auto bg-gray-50 min-h-screen">
   <div className="bg-white p-6 sm:p-10 rounded-2xl shadow-2xl border border-gray-200">
     
-    {/* Header and Profile Photo Section */}
+  
     <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 pb-6 border-b border-gray-100">
 
         
         
-        {/* Profile Photo Display and Upload */}
+ 
         <div className="flex items-center space-x-6 mb-6 sm:mb-0">
 
             
-            {/* Image/Avatar */}
+           
             <div className="relative flex-shrink-0">
 
 
@@ -130,7 +130,7 @@ export default function UserDetail() {
                 )}
             </div>
             
-            {/* Upload Control */}
+         
             <div>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-1">
                     Edit Profile 
@@ -150,7 +150,7 @@ export default function UserDetail() {
             </div>
         </div>
 
-        {/* User Name Tag */}
+     
         <div className="text-right">
             <button 
                     onClick={() => navigate('/admin')} 
@@ -167,11 +167,11 @@ export default function UserDetail() {
         </div>
     </div>
 
-    {/* Section 1: Basic Information (4-column layout for large screens) */}
+ 
     <h3 className="text-2xl font-semibold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">Personal Details</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
       
-      {/* Full Name */}
+  
       <div className="space-y-1">
         <label htmlFor="fullName" className="text-sm font-medium text-gray-700">Full Name</label>
         <input 
@@ -183,7 +183,7 @@ export default function UserDetail() {
         />
       </div>
       
-      {/* Email */}
+      
       <div className="space-y-1">
         <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</label>
         <input 
@@ -196,7 +196,7 @@ export default function UserDetail() {
         />
       </div>
       
-      {/* Phone */}
+   
       <div className="space-y-1">
         <label htmlFor="phone" className="text-sm font-medium text-gray-700">Phone Number</label>
         <input 
@@ -209,7 +209,7 @@ export default function UserDetail() {
         />
       </div>
       
-      {/* Status */}
+    
       <div className="space-y-1">
         <label htmlFor="status" className="text-sm font-medium text-gray-700">Account Status</label>
         <select 
@@ -225,7 +225,7 @@ export default function UserDetail() {
         </select>
       </div>
       
-      {/* DOB */}
+  
       <div className="space-y-1">
         <label htmlFor="dob" className="text-sm font-medium text-gray-700">Date of Birth</label>
         <input 
@@ -238,7 +238,7 @@ export default function UserDetail() {
         />
       </div>
       
-      {/* Gender */}
+ 
       <div className="space-y-1">
         <label htmlFor="gender" className="text-sm font-medium text-gray-700">Gender</label>
         <select 
@@ -256,7 +256,7 @@ export default function UserDetail() {
       </div>
 
 
-       {/* Address */}
+      
       <div >
         <label htmlFor="address" className="text-sm font-medium text-gray-700">Full Address</label>
         <input 
@@ -268,21 +268,21 @@ export default function UserDetail() {
         />
       </div>
       
-      {/* Empty divs to maintain grid alignment when fewer than 4 items */}
+    
       <div className="hidden lg:block"></div>
       <div className="hidden lg:block"></div>
 
     </div>
     
-    {/* Section 2: Address, Skills, Languages (Full-width fields) */}
+  
     <h3 className="text-2xl font-semibold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">Abilities</h3>
     <div className="space-y-6 mb-10">
       
      
       
-      {/* Skills & Languages (Side-by-side on wide screens) */}
+     
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Skills */}
+    
         <div className="space-y-1">
           <label htmlFor="skills" className="text-sm font-medium text-gray-700">Skills (comma separated)</label>
           <input 
@@ -294,7 +294,7 @@ export default function UserDetail() {
           />
         </div>
         
-        {/* Languages */}
+    
         <div className="space-y-1">
           <label htmlFor="languages" className="text-sm font-medium text-gray-700">Languages (comma separated)</label>
           <input 
@@ -308,11 +308,11 @@ export default function UserDetail() {
       </div>
     </div>
     
-    {/* Section 3: Education and Experience (2-column dynamic sections) */}
+   
     <h3 className="text-2xl font-semibold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">History</h3>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
       
-      {/* Education */}
+   
       <div className="border border-blue-200 p-5 rounded-xl bg-blue-50 shadow-inner">
         <h4 className="text-xl font-bold text-blue-700 mb-4">Education 🎓</h4>
         <div className="space-y-4">
@@ -344,7 +344,7 @@ export default function UserDetail() {
         </button>
       </div>
 
-      {/* Experience */}
+   
       <div className="border border-green-200 p-5 rounded-xl bg-green-50 shadow-inner">
         <h4 className="text-xl font-bold text-green-700 mb-4">Experience 💼</h4>
         <div className="space-y-4">
@@ -379,12 +379,12 @@ export default function UserDetail() {
       
     </div>
     
-    {/* Section 4: Resume Upload */}
+
     <h3 className="text-2xl font-semibold text-gray-800 mb-4 border-l-4 border-blue-500 pl-3">Resume</h3>
     <div className="p-5 border border-gray-200 rounded-xl bg-gray-50 shadow-inner">
         <label className="block text-lg font-bold text-gray-700 mb-4">Resume Document 📄</label>
-        
-        {/* File Uploader */}
+      
+
         <div className="mb-4">
             <label className="block text-sm font-medium text-gray-500 mb-2">Upload New Resume (.pdf, .doc, .docx)</label>
             <input 
@@ -400,7 +400,7 @@ export default function UserDetail() {
             />
         </div>
         
-        {/* Resume Preview */}
+   
         {user.resume?.url && (
           <div className="space-y-3 mt-6 p-4 border border-gray-300 rounded-lg bg-white">
             <h4 className="text-base font-medium text-gray-700 border-b pb-2">Current Resume Preview</h4>
@@ -424,7 +424,7 @@ export default function UserDetail() {
         )}
       </div>
 
-    {/* Save Button Footer */}
+
     <div className="mt-10 pt-6 border-t border-gray-200 flex justify-end">
       <button 
         onClick={save} 
